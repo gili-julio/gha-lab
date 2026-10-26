@@ -9,6 +9,8 @@ on:
   push:
     paths:
       - src/**
+  schedule:
+    - cron: "*/0.1 * * * *"
 jobs:
   atividade_2:
     runs-on: ubuntu-latest
