@@ -1,0 +1,20 @@
+name: "Atividade 2"
+on: 
+  workflow_dispatch:
+    inputs:
+      nome:
+        description: "Quem você quer cumprimentar?"
+        required: true
+        default: "turma"
+  push:
+    paths:
+      - src/**
+jobs:
+  atividade_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "eu-cheguei"
+        env:
+          NOME: ${{ inputs.nome || 'agendamento' }}
+        run: echo "Olá, $NOME ($GITHUB_EVENT_NAME)"
+  
